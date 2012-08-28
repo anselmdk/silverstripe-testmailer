@@ -42,12 +42,25 @@ class TestMailerToFile extends Mailer  {
 ~PLAINTEXT: $plainContent ~ \r\n
 ~INLINEIMAGES: $inlineImages ~";
 		$this->writeToFile($string);
+		$this->writeHtml($htmlContent);
+		
 	}
 
 	function writeToFile($string) {
-		$myFile = Director::baseFolder()."/".self::$file_to_write_to;
+		//$myFile = Director::baseFolder()."/".self::$file_to_write_to;
+		$myFile = Director::baseFolder()."/assets/email" . date("Y-m-d_H-i-s") . ".txt";
 		$fh = fopen($myFile, 'a') or die("can't open file $myFile");
-		$stringData = self::$separation_string.$string;
+		//$stringData = self::$separation_string.$string;
+		$stringData = $string;
+		fwrite($fh, $stringData);
+		fclose($fh);
+	}
+	function writeHtml($string) {
+		//$myFile = Director::baseFolder()."/".self::$file_to_write_to;
+		$myFile = Director::baseFolder()."/assets/email" . date("Y-m-d_H-i-s") . ".html";
+		$fh = fopen($myFile, 'a') or die("can't open file $myFile");
+		//$stringData = self::$separation_string.$string;
+		$stringData = $string;
 		fwrite($fh, $stringData);
 		fclose($fh);
 	}
