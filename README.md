@@ -1,20 +1,6 @@
 # Test Mailer
-Pre 0.1 proof of concept
 
-forked from <https://github.com/sunnysideup/silverstripe-testmailer>
-
-
-## Developer
-
-Nicolaas Francken [at] sunnysideup.co.nz
-
-## Requirements
-
-SilverStripe 2.3.2 or greater.
-
-## Documentation
-
-Adds a test mailer for your localhost environment.
+Use this module to work with/test emailing while developing locally on a SilverStripe project.
 
 This can be useful in case your localhost SMTP server
 does not work.
@@ -25,6 +11,9 @@ To be used like this
 
 http://www.mysite.co.nz/testifemailsareworking/?email=a@b.c
 
-## Installation Instructions
 
-1. Find out how to add modules to SS and add module as per usual.
+
+## Credits
+
+This module has been forked from <https://github.com/sunnysideup/silverstripe-testmailer>
+
