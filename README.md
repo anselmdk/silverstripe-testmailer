@@ -15,7 +15,8 @@ http://www.mysite.co.nz/testifemailsareworking/?email=a@b.c
   
 1. cd into your document root, and run:    
 `git clone git@github.com:titledk/silverstripe-testmailer.git testmailer`
-2. Add the testmailer to your `.gitignore` (you don't want it on your live site)
+2. Add this somewhere in your config ´: `Email::set_mailer(new TestMailerToFile);` (make sure it's only activated when in dev mode / or only while you're testing)
+3. Add the testmailer to your `.gitignore` (you don't want it on your live site)
   
 
 
